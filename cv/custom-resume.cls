@@ -72,29 +72,17 @@ Last Updated on \today % Last Updated text
 
 \usepackage{titlesec} % Required for customizing section/subsection/etc titles
 
-\titlespacing{\section}{0pt}{0pt}{0pt} % Removes the spacing around the main section titles
-\titlespacing{\subsection}{0pt}{0pt}{0pt} % Removes the spacing around the subsections
-\newcommand{\sectionspace}{\vspace{5pt}} % Defines a command to add a set amount of space after sections and subsections
+\titlespacing{\section}{0pt}{0pt}{-3pt} % Removes the spacing around the main section titles
 
 \titleformat{\section}{ % Customize the large section titles
 \color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{14pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
 
-\titleformat{\subsection}{ % Customize the subsections and places worked/studied titles
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+\newcommand{\heading}[1]{ % Used for the descriptions of different activities
+\color{subheadings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {\vspace{8pt} #1 \\} \normalfont}
 
-\newcommand{\descript}[1]{ % Used for the descriptions of different activities
-\color{subheadings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\subheading}[1]{ % Used for the details of different activities
+\color{headings2}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {\vspace{3pt} #1\\} \normalfont}
 
-\newcommand{\details}[1]{ % Used for the details of different activities
-\color{headings2}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\newcommand{\sbt}{\,\begin{picture}(3,1)(-1,-3)\circle*{2}\end{picture}\ }
 
-\newcommand{\detailslite}[1]{ % Used for the details of different activities (lite)
-\color{headings2}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Regular}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
-
-%----------------------------------------------------------------------------------------
-%	NEW ENVIRONMENTS
-%----------------------------------------------------------------------------------------
-
-\newenvironment{tightitemize} % Defines the tightitemize environment which modifies the itemize environment to be more compact
-{\vspace{-\topsep}\begin{itemize}[leftmargin=*]\itemsep1pt \parskip0pt \parsep0pt}
-{\end{itemize}\vspace{-\topsep}}
+\newcommand{\repo}[2]{\underline{#1} \thinspace  {#2 \\}  \vspace{3pt}}
